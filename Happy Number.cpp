@@ -16,18 +16,17 @@ public:
         while(n!=0)
         {
             ans += (n%10) * (n%10);
-            n /= 10;
+            n/=10;
         }
         return ans;
     }
     bool isHappy(int n) {
-        set<int> s;
-        while(1)
+        //hint if not happy number always have 4
+        //else happy number
+        while(n!=4)
         {
             n = check(n);
             if(n==1) return true;
-            if(s.find(n)!=s.end()) return false;
-            s.insert(n);
         }
         return false;
     }
